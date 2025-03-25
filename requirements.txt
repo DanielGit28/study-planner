@@ -1,0 +1,7 @@
+Django
+djangorestframework
+pandas
+scikit-learn
+joblib
+openai
+python-dotenv

@@ -1,0 +1,59 @@
+# Entorno virtual
+env/
+venv/
+ENV/
+*.env
+.env.*
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de logs
+*.log
+
+# Archivos de bases de datos
+*.sqlite3
+*.db
+
+# Archivos temporales
+*.swp
+*.bak
+*.tmp
+
+# Configuración de IDEs / editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de coverage / test
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Archivos de migraciones si querés
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Modelos y archivos pesados (opcional si vas a versionar)
+planner/ml_model.pkl
+
+# Node (si metés front)
+node_modules/
+dist/
+build/
+
+# Backup de OpenAI keys o sensitive
+openai_key.txt

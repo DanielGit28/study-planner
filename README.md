@@ -69,4 +69,8 @@ La respuesta será un plan de estudio ordenado por prioridad y días restantes.
 
 ---
 
+### API Key
+
+Pregunta por una OpenAI key o ingresa la tuya creando un archivo .env con el nombre de variable ``` OPENAI_API_KEY ```
+
 Autor: **Daniel Zúñiga Rojas**

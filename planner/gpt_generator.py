@@ -7,17 +7,31 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def generate_gpt_plan(task_name, mode, deadline, urgency):
     prompt = f"""
-Eres un experto en educación. Dame un plan de estudio para esta tarea:
-Tarea: {task_name}
-Modo de estudio recomendado: {mode}
-Deadline: {deadline}
-Urgencia: {urgency}/5
+Eres un asistente que genera planes de estudio personalizados. 
+Devuelve únicamente un objeto JSON (sin texto explicativo) con la siguiente estructura:
 
-Devuélveme:
-- 3 actividades variadas (ej: lectura, ejercicios, mapas mentales, escritura) o mas
-- Tiempo estimado por actividad
-- Recursos recomendados (videos, links, papers)
-En formato JSON.
+{{
+  "actividades": [
+    {{
+      "tipo": "Lectura/Ejercicio/Practica/Examen/etc, lo que se te ocurra pero varia",
+      "descripcion": "...",
+      "tiempo_estimado": "...",
+      "recursos": [
+        {{
+          "titulo": "...",
+          "autor": "...",
+          "link": "..."
+        }}
+      ]
+    }},
+    ...
+  ]
+}}
+
+Tarea: {task_name}
+Urgencia: {urgency}/5
+Deadline: {deadline}
+Modo de estudio: {mode}
 """
     completion = client.chat.completions.create(
         model="gpt-4o",
